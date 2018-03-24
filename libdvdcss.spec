@@ -1,6 +1,6 @@
 Summary:    A portable abstraction library for DVD decryption
 Name:       libdvdcss
-Version:    1.4.1
+Version:    1.4.2
 Release:    1%{?dist}
 License:    GPLv2+
 Source:     http://www.videolan.org/pub/videolan/libdvdcss/%{version}/libdvdcss-%{version}.tar.bz2
@@ -63,6 +63,9 @@ find %{buildroot} -regex ".*\.la$" -delete
 
 
 %changelog
+* Sat Mar 24 2018 Xavier Bachelot <xavier@bachelot.org> - 1.4.2-1
+- Update to 1.4.2.
+
 * Thu Feb 01 2018 Xavier Bachelot <xavier@bachelot.org> - 1.4.1-1
 - Update to 1.4.1.
 - Clean up spec.
