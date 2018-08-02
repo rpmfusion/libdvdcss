@@ -1,7 +1,7 @@
 Summary:    A portable abstraction library for DVD decryption
 Name:       libdvdcss
-Version:    1.4.2
-Release:    3%{?dist}
+Version:    1.2.13
+Release:    1%{?dist}
 License:    GPLv2+
 Source:     http://www.videolan.org/pub/videolan/libdvdcss/%{version}/libdvdcss-%{version}.tar.bz2
 URL:        http://www.videolan.org/libdvdcss/
@@ -62,6 +62,10 @@ find %{buildroot} -regex ".*\.la$" -delete
 
 
 %changelog
+* Thu Aug 02 2018 Xavier Bachelot <xavier@bachelot.org> - 1.2.13-1
+- Downgrade to 1.2.13 to match EL6 libdvdread.
+  No Epoch: bump, this is expected.
+
 * Fri Jul 27 2018 Xavier Bachelot <xavier@bachelot.org> - 1.4.2-3
 - Add BR: gcc.
 - Modernize specfile.
