@@ -1,7 +1,7 @@
 Summary:    A portable abstraction library for DVD decryption
 Name:       libdvdcss
 Version:    1.4.3
-Release:    3%{?dist}
+Release:    4%{?dist}
 License:    GPLv2+
 Source:     http://www.videolan.org/pub/videolan/libdvdcss/%{version}/libdvdcss-%{version}.tar.bz2
 URL:        http://www.videolan.org/libdvdcss/
@@ -62,6 +62,10 @@ find %{buildroot} -regex ".*\.la$" -delete
 
 
 %changelog
+* Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.4.3-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
+  5.1
+
 * Wed Feb 09 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.4.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
