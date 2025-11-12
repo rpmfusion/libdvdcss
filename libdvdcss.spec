@@ -1,13 +1,14 @@
 Summary:    A portable abstraction library for DVD decryption
 Name:       libdvdcss
-Version:    1.4.3
-Release:    9%{?dist}
+Version:    1.5.0
+Release:    1%{?dist}
 License:    GPLv2+
-Source:     http://www.videolan.org/pub/videolan/libdvdcss/%{version}/libdvdcss-%{version}.tar.bz2
+Source:     http://www.videolan.org/pub/videolan/libdvdcss/%{version}/libdvdcss-%{version}.tar.xz
 URL:        http://www.videolan.org/libdvdcss/
 
 BuildRequires: doxygen
 BuildRequires: gcc
+BuildRequires: meson
 
 
 %description
@@ -28,30 +29,25 @@ you will need to install %{name}-devel.
 
 
 %prep
-%autosetup
+%autosetup -p1
 
 
 %build
-%configure --disable-static
-%make_build
+%meson -Ddefault_library=shared
+
+%meson_build
 
 
 %install
-%make_install
+%meson_install
 
 # remove generated doc from build
 mv %{buildroot}/usr/share/doc/libdvdcss docdir
 
-# Remove all libtool archives
-find %{buildroot} -regex ".*\.la$" -delete
-
-
-%ldconfig_scriptlets
-
 
 %files
 %license COPYING
-%doc AUTHORS ChangeLog README
+%doc AUTHORS README.md
 %{_libdir}/%{name}.so.2*
 
 %files devel
@@ -62,6 +58,9 @@ find %{buildroot} -regex ".*\.la$" -delete
 
 
 %changelog
+* Wed Nov 12 2025 Nicolas Chauvet <kwizart@gmail.com> - 1.5.0-1
+- Update to 1.5.0
+
 * Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.4.3-9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
 
